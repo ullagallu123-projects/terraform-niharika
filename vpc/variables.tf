@@ -41,7 +41,7 @@ variable "common_tags" {
 }
 variable "enable_nat" {
   type    = bool
-  default = true
+  default = false
 }
 variable "vpc_peering_enable" {
   type = bool
