@@ -78,6 +78,18 @@ resource "aws_subnet" "db" {
   )
 }
 
+resource "aws_db_subnet_group" "default" {
+  name       = local.name
+  subnet_ids = aws_subnet.db[*].id
+
+  tags = merge(
+    {
+      Name = local.name
+    },
+    var.common_tags
+  )
+}
+
 ### Route Tables
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
