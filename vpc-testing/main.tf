@@ -6,11 +6,11 @@ module "testing" {
   private_subnet_cidr=["192.168.3.0/24", "192.168.4.0/24"]
   db_subnet_cidr=["192.168.5.0/24", "192.168.6.0/24"]
   environment="bapatla"
-  project_name = "niharika"
+  project_name = "mini"
   common_tags={
     "Owner"        = "siva"
     "Terraform"    = true
-    "Project_Name" = "niharika"
+    "Project_Name" = "mini"
     "Environemt"   = "bapatla"
   }
   enable_nat=false

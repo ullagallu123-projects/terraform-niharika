@@ -14,5 +14,6 @@ terraform {
 }
 
 provider "aws" {
+  profile = "eks-siva.bapatlas.site"
   region  = "ap-south-1"
 }
