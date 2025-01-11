@@ -1,18 +1,13 @@
 module "testing" {
   source = "../vpc"
-  vpc_cidr="192.168.0.0/16"
-  azs = ["ap-south-1a", "ap-south-1b"]
-  public_subnet_cidr=["192.168.1.0/24", "192.168.2.0/24"]
-  private_subnet_cidr=["192.168.3.0/24", "192.168.4.0/24"]
-  db_subnet_cidr=["192.168.5.0/24", "192.168.6.0/24"]
-  environment="bapatla"
-  project_name = "mini"
-  common_tags={
-    "Owner"        = "siva"
-    "Terraform"    = true
-    "Project_Name" = "mini"
-    "Environemt"   = "bapatla"
-  }
-  enable_nat=false
-  vpc_peering_enable=true
+  vpc_cidr=var.vpc_cidr
+  azs = var.azs
+  public_subnet_cidr= var.public_subnet_cidr
+  private_subnet_cidr=var.private_subnet_cidr
+  db_subnet_cidr=var.db_subnet_cidr
+  environment=var.environment
+  project_name = var.project_name
+  common_tags=var.common_tags
+  enable_nat=var.enable_nat
+  vpc_peering_enable=var.vpc_peering_enable
 }
