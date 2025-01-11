@@ -13,6 +13,7 @@ output "private_subnet_id" {
 output "db_subnet_id" {
   value = [for subnet in aws_subnet.db : subnet.id]
 }
-output "default_vpc_id" {
-  value = data.aws_vpc.selected.id
+
+output "db_subnet_group" {
+  value = aws_db_subnet_group.default.id
 }
